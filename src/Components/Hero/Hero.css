@@ -1,0 +1,144 @@
+.hero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 80px; /* Ensure this matches the navbar height */
+    padding: 100px 0; /* This keeps the padding while avoiding overlap */
+    gap: 35px;
+    color: white;
+    position: relative; /* Ensure it’s positioned correctly */
+    z-index: 1; /* Keep text above the background */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Cover the full height of the hero section */
+    background: url('../../assets/portfolio_photo1.jpg') no-repeat center center / cover; /* Background image */
+    z-index: -1; /* Ensure the image is behind the text */
+    opacity: 0.6; /* Semi-transparent for effect */
+}
+
+.hero h1 {
+    text-align: center;
+    width: 70%;
+    font-size: 70px;
+    font-weight: 400;
+    margin: 0; /* Remove default margin to prevent overlap */
+}
+
+.name {
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.animated-text {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.text {
+    display: inline-block;
+    white-space: nowrap;
+    background: linear-gradient(90deg, #786072, #6cae89);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Ensure text is transparent, showing gradient */
+    animation: typing 3s steps(30, end) 1s 1 normal both, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+.hero p {
+    width: 50%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 40px;
+    margin: 0; /* Remove default margin */
+}
+
+.hero-action {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 500;
+    margin-bottom: 50px; /* Maintain margin for spacing */
+}
+
+.hero-connect {
+    padding: 25px 45px;
+    border-radius: 50px;
+    background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 102.06%);
+    cursor: pointer;
+}
+
+.hero-resume {
+    padding: 25px 75px;
+    border-radius: 50px;
+    border: 2px solid #FFF;
+    cursor: pointer;
+}
+
+.hero-connect:hover {
+    border: 2px solid white;
+}
+
+.hero-resume:hover {
+    border-color: #B415FF;
+}
+
+.resume-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.resume-link:hover {
+    text-decoration: underline;
+}
+
+@media(max-width: 768px) {
+    .hero h1 {
+        margin-top: 20px; /* Adjust margin to avoid overlap */
+        width: 90%;
+        font-size: 50px;
+    }
+    
+    .hero p {
+        width: 60%;
+        font-size: 18px;
+        line-height: 32px;
+        margin: 10px 0px;
+    }
+    
+    .hero-action {
+        gap: 16px;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 50px;
+    }
+    
+    .hero-connect {
+        padding: 20px 30px;
+        border-radius: 40px;
+    }
+    
+    .hero-resume {
+        padding: 20px 50px;
+        border-radius: 40px;
+    }
+}
